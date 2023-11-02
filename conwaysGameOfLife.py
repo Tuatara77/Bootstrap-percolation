@@ -129,7 +129,7 @@ def main():
     pygame.init()
     size = 700    # size of the screen in pixels
     n = GRID_SIZE # number of boxes in each row/column
-    assert n < size, "Cannot have more cells in each row/column than the width of the window"
+    assert n <= size, "Cannot have more cells in each row/column than the width of the window"
     screen = pygame.display.set_mode((size, size))
     clock = pygame.time.Clock()
     grid = Grid(n, size)
