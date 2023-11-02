@@ -3,7 +3,7 @@ import random
 import cv2
 import numpy as np
 
-# chance of a cell spawning in a random location on the grid
+# probability of a random cell initially being infected
 SPAWN_CHANCE = 0.05
 
 # the number of cells in each row/column
@@ -125,7 +125,7 @@ class Grid:
 
 
 def main():
-    assert 0 < SPAWN_CHANCE < 1, "Spawn chance must be between 0 and 1"
+    assert 0 < SPAWN_CHANCE < 1, "Infection chance must be between 0 and 1"
     pygame.init()
     size = 700    # size of the screen in pixels
     n = GRID_SIZE # number of boxes in each row/column
