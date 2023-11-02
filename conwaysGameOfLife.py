@@ -3,9 +3,6 @@ import random
 import cv2
 import numpy as np
 
-# set to True to invert the colours (black background, white cells)
-INVERT_COLOURS = False
-
 # chance of a cell spawning in a random location on the grid
 SPAWN_CHANCE = 0.05
 
@@ -37,8 +34,7 @@ cells = []
 class Cell(Box):
     def __init__(self, x:int, y:int, size:int, colour:tuple[int,int,int]):
         self.size = size-2 if size>2 else 1
-        if INVERT_COLOURS: super().__init__(x, y, self.size, self.size, (255-colour[0],255-colour[1],255-colour[2]))
-        else: super().__init__(x, y, self.size, self.size, colour)
+        super().__init__(x, y, self.size, self.size, colour)
         cells.append(self)
     
     def draw(self, surface):
@@ -148,8 +144,7 @@ def main():
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_ESCAPE:
                     running = False
-        if INVERT_COLOURS: screen.fill((0,0,0))
-        else: screen.fill((255,255,255))
+        screen.fill((255,255,255))
         grid.draw(screen)
         pygame.display.flip()
         grid.step()
