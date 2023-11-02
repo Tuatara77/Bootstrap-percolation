@@ -1,7 +1,5 @@
-# Conway's Game of Life (Variation)
-The rules of this variation are:
-1. No cells die
-2. A cell is born if it has at least 2 neighbours
+# Bootstrap Percolation
+Bootstrap Percolation is a model for the spreading of infection.
+The criteria for the transmission of infection is that a cell must have at least 2 (in this case) infected neighbours. Once a cell has become infected, it remains infected.
 
-\
-The initial spawning of cells is randomised. The probability of a cell starting off being alive can be changed with SPAWN_CHANCE. 
+I am by no means an expert. My little understanding of it came from Prof. Alexander Holroyd's [paper](http://aeholroyd.org/papers/cell.pdf), [webpage](http://aeholroyd.org/boot/) and a bit from speaking to him in person, and [this video](https://www.youtube.com/watch?v=SkJOz7-XO5s) by Stefan Tan.
